@@ -1,0 +1,175 @@
+.jobs {
+  &__header {
+
+  }
+  &__title {
+    @extend .font-bitterbold;
+    @include font-size($font_size_h2_other);
+
+    color: $yellow_base;
+    letter-spacing: 4px;
+    line-height: 70px;
+    text-align: center;
+
+    padding-bottom: 40px;
+    padding-top: 40px;
+    @include tablet-max{
+      letter-spacing: 4px;
+      @include font-size($font_size_h2_signatures_tablet);
+      line-height: #{($font_size_h2_signatures_tablet)-10}px;
+    }
+    @include mobile {
+      letter-spacing: 1px;
+      @include font-size($font_size_h2_signatures_mobile);
+      line-height: 45px;
+    }
+    @include small-mobile {
+      letter-spacing: 2px;
+      @include font-size($font_size_h2_section_mobile);
+    }
+
+  }
+  &__loop {
+    font-weight: 400;
+    &::before,
+    &::after {
+      display: none;
+    }
+    @media (min-width: 600px) {
+      display: grid;
+      grid-gap: 1em;
+      grid-template-columns: 50% 50%;
+    }
+    @media (min-width: 768px) {
+      grid-template-columns: 33.3% 33.3% 33.3%;
+    }
+    // @media (min-width: 1200px) {
+    //   column-count: 4;
+    // }
+    // @media (min-width: 1600px) {
+    //   column-count: 5;
+    // }
+    // @media (min-width: 1920px) {
+    //   column-count: 6;
+    // }
+
+    padding: 1em 1em 60px;;
+  }
+  &__item {
+    background-color: $gray_base;
+    color: $blue_base;
+    display: inline-block;
+    font-weight: 300;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+    width: 100%;
+    @media (min-width: 600px) {
+      // -webkit-margin-before: 0;
+      // -webkit-margin-after: 0;
+      // -webkit-column-break-inside: avoid;
+    }
+    @media (min-width: 600px) {
+      display: block;
+    }
+    &__image-wrapper {
+      float: none;
+      margin: 0;
+      object-fit: cover;
+      overflow: hidden;
+      position: relative;
+      height: 300px;
+      width: 100%;
+      &::after {
+        content: '';
+        display: block;
+        background: linear-gradient(to top, $yellow_base 0%,rgba(255,255,255,0) 100%);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 150%;
+        width: 100%;
+      }
+    }
+    &__image {
+      // display: block;
+      // position: absolute;
+      // left: 50%;
+      // top: 50%;
+      // transform: translate(-50%, -50%);
+      // height: auto;
+      // width: auto;
+      // min-height: 100%;
+      // min-width: 100%;
+      height: 100%;
+    }
+    &__content {
+      // background: linear-gradient(to top, $blue_base 0%,rgba(255,255,255,0) 100%);
+
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 1em;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 30px 0 0 600px;
+        border-top-width: 30px;
+        transition: all .2s ease;
+        border-color: transparent transparent transparent $lightblue-base;
+      }
+    }
+    &__title {
+      font-size: 1.4em;
+      // font-weight: 300;
+      // text-transform: none;
+    }
+    &--spontaneous {
+      background-color: $blue_base;
+      color: white;
+      &:hover {
+        color: white;
+        &::after {
+          border-top-width: 50px;
+        }
+      }
+      .jobs__item__content {
+        height: 127px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        &::after {
+          display: none;
+        }
+        > :last-child {
+          margin-bottom: 0;
+        }
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 30px 0 0 600px;
+        border-top-width: 30px;
+        transition: all .2s ease;
+        border-color: transparent transparent transparent $lightblue-base;
+      }
+    }
+    &:hover {
+      .jobs__item__content::after {
+        border-top-width: 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.page-type {
+    margin-top: 50px;
+    .title-page {
+        @extend .font-bitterbold;
+        letter-spacing: 2px;
+        @include font-size($font_size_h2_section);
+        color:$yellow_base;
+        text-align: center;
+    }
+    .content-wp {
+        padding-top: 60px;
+        padding-bottom: 80px;
+        h3{
+            @extend .font-bitterbold;
+            letter-spacing: 2px;
+            @include font-size($font_size_title_small);
+            text-transform: uppercase;
+            color:$form_color_hover;
+        }
+    }
+    
+    @include small-mobile{
+        .title-page {
+            letter-spacing: 2px;
+            @include font-size($font_size_h2_section_mobile);
+        }
+        
+        .content-wp {
+            h3{
+                letter-spacing: 1px;
+                @include font-size($font_size_pbig);
+            }
+        }
+    }
+}

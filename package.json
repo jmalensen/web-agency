@@ -1,0 +1,41 @@
+{
+  "name": "wordpress theme web agency",
+  "prettyName": "wordpress theme web agency",
+  "version": "0.0.1",
+  "description": "wordpress theme web agency",
+  "main": "gulpfile.js",
+  "author": "Julien Malaper",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "bootstrap": "^3.3.7",
+    "core-util-is": "^1.0.2",
+    "inflight": "^1.0.6",
+    "inherits": "^2.0.3",
+    "lodash": "^4.17.4",
+    "owl.carousel": "^2.2.0",
+    "util-deprecate": "^1.0.2",
+    "waypoints": "^4.0.1",
+    "wrappy": "^1.0.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-add-src": "^0.2.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "merge-stream": "^1.0.1",
+    "run-sequence": "^1.2.2"
+  }
+}

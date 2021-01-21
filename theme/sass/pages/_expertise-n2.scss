@@ -1,0 +1,897 @@
+body.single-prestation{
+    background: $gray_base;
+    main {
+        @include font-size($font_size_default);
+
+        /***********************SECTIONS*******************************/
+        section, header{
+            position:relative;
+            text-align:center;
+            box-sizing: content-box;
+        }
+
+        section > div > .wrapper, header > div > .wrapper{
+            height: 100%;
+        }
+
+
+        /***********************SECTION INTRODUCTION*******************************/
+        .introPresta {
+            padding-top:40px;
+            padding-bottom:80px;
+            background: $gray_base;
+            .container {
+                width:700px;
+            }
+            &__title {
+                margin-bottom:50px;
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_h2_other);
+                color:$yellow_base;
+            }
+
+
+
+
+            &__menu-mob-horizontal {
+                display:none;
+                @include mobile{
+                    display:block;
+                    overflow: hidden;
+                }
+                position: relative;
+                width: 100%;
+                padding: 10px 0 10px 0;
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                margin-bottom: 30px;
+                .contain-items{
+                    width:100%;
+                    height:30px;
+                    overflow: hidden;
+                }
+                .mmh_list-item {
+                    width: 96%;
+                    margin: 0 0 0 2%;
+                    padding-bottom: 25px;
+                    
+                    &::-webkit-scrollbar { display: none; }
+                    overflow-x: scroll;
+                    overflow-y: hidden;
+                    white-space: nowrap;
+                    -webkit-overflow-scrolling:touch;
+                    -ms-overflow-style:-ms-autohiding-scrollbar;
+                    .mmh_item-menu {
+                        display: inline-block;
+                        list-style: none;
+                        text-transform: none;
+                        padding: 0; margin: 0;
+                        &:before {
+                            content: '.';
+                            display: inline-block;
+                            font-size: 20px;
+                        }
+                        &.active {
+                            &:before { content: ''; }
+                            a { color: rgba(0, 0, 0, 0.8); }
+                        }
+                        a {
+                            padding: 5px 5px 3px 6px;
+                            font-size: 16px;
+                            @extend .font-robotolight;
+                        }
+                    }
+                }
+                .before {
+                    position: absolute;
+                    left: -40px;
+                    top: 0;
+                    width: 20%;
+                    height: 100%;
+                }
+                .after {
+                    position: absolute;
+                    right: -30px;
+                    top: 0;
+                    width: 20%;
+                    height: 100%;
+                }
+            }
+
+
+
+
+
+
+            &__subtitle{
+                width: 380px;
+                margin: 0 auto 35px auto;
+
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_title_small);
+                text-transform: uppercase;
+                color:$form_color_hover;
+            }
+            &__description{
+                width: 620px;
+                margin: 0 auto;
+                
+                text-align: left;
+                .quote_image{
+                    @include specific-ie{
+                        display: none;
+                    }
+                    width: 64px;
+                    float: left;
+                    margin-top:-10px;
+                    margin-right: 15px;
+                }
+                .short-text{
+                    display:none;
+                    .seemore{
+                        @extend .font-robotoregular;
+                    }
+                }
+            }
+        }
+
+        #anchor{
+            position:relative;
+            #anchor-contain{
+                display:block;
+                position:absolute;
+                top:-35px;
+                left:0;
+                height:317px;
+                z-index:4;
+                #logo{
+                    height:317px;
+                    width:317px;
+                    background: url(../images/logo_action.png) no-repeat;
+                    background-size:100%;
+                }
+            }
+        }
+        /***********************SECTION CALLTOACTION*******************************/
+        .calltoaction{
+            background: $blue_base;
+            .container{
+                padding:20px 0 30px 0;
+                .contain{
+                    z-index:2;
+                }
+            }
+            &__text{
+                margin-bottom: 80px;
+
+                @include font-size($font_size_title_big);
+                @extend .font-robotolight;
+                font-style: italic;
+                text-align: left;
+                color:$white_base;
+            }
+            &__containsBtn{
+                text-align: left;
+                a{
+                    display: inline-block;
+                    height: 38px;
+                    padding: 8px 25px;
+                    margin: 0 auto;
+                    
+                    @extend .font-robotobold;
+                    text-transform: uppercase;
+                    border-radius: 50px;
+                    text-align: center;
+                    &.works{
+                        margin-right:20px;
+                        width:230px;
+
+                        background: $lightblue_base;
+                        color: $white_base;
+                        transition:all 0.3s;
+                        &:hover, &:focus{
+                            background: $white_base;
+                            color:$lightblue_base;
+                        }
+                    }
+                    &.contact{
+                        width:230px;
+                        background: $yellow_base;
+                        color: $blue_base;
+                        transition:all 0.3s;
+                        &:hover, &:focus{
+                            color:$white_base;
+                        }
+                    }
+                }
+            }
+            @include skew-border(69px, -36px, -1.95deg, 65px, -33px, 1.95deg, $blue_base);
+        }
+
+
+        /***********************SECTION METHOD PRESTA*******************************/
+        .methodPresta{
+            display:flex;
+            flex-direction: row;
+            overflow:hidden;
+            width:100%;
+            padding: 0;
+            
+            background: $gray_base;
+            text-align: left;
+            .col{
+                &.text{
+                    /*margin:90px 25px 60px $size_margin_container_large;*/
+                    /*width:$size_width_aside_large;*/
+                    padding: 90px 5% 50px 10%;
+                    width:45%;
+                    height: auto;
+                }
+                &.image{
+                    position:relative;
+                    /*top:-50px;*/
+                    /*width:$size_width_main_large;*/
+                    width:55%;
+                    padding:0;
+                    p{
+                        text-align: center;
+                    }
+                    img{
+                        width: 100%;
+                        height: auto;
+                        min-height: 100%;
+                        min-width: 100%;
+                        @include laptop{
+                            width: auto;
+                        }
+                    }
+                    @include laptop{
+                        /*height:500px;*/
+                    }
+                }
+            }
+            &__title{
+                margin-bottom:35px;
+
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_title_small);
+                color:$form_color_hover;
+            }
+        }
+
+
+        /***********************SECTION PROCESS*******************************/
+        .process{
+            background: $yellow_base;
+            text-align: left;
+            z-index:1;
+            .container{
+                position:relative;
+                padding:0 0 30px 0;
+                z-index:2;
+            }
+            &__image{
+                margin-top:40px;
+                img{
+                    float:right;
+                }
+            }
+            &__text{
+                margin-top:70px;
+                &__title{
+                    margin-bottom:35px;
+
+                    @extend .font-bitterbold;
+                    letter-spacing: 2px;
+                    @include font-size($font_size_title_small);
+                    color:$form_color_hover;
+                }
+                &__list{
+                    margin-left:28px;
+                    .line{
+                        position:relative;
+                        margin-bottom:30px;
+                        &:before{
+                            position: absolute;
+                            content: ' ';
+                            top: 20%;
+                            left: -25px;
+                            height: 15px;
+                            width: 15px;
+
+                            background: $form_color_hover;
+                            border-radius: 15px;
+                        }
+                    }
+                }
+            }
+            @include skew-border(69px, -36px, -1.95deg, 65px, -33px, -1.95deg, $yellow_base);
+        }
+
+
+        /***********************SECTION ILLUSTRATION*******************************/
+        .illustration{
+            height:auto;
+            
+            background: $blue_base;
+            padding-bottom:50px;
+            margin-bottom: -100px;
+            .center{
+                transform: translateY(50%);
+            }
+            img{
+                width:100%;
+                transform: translateY(-50%);
+            }
+/*            &:before{
+                position:absolute;
+                content:'';
+                top:-35px;
+                left:0;
+                width:100%;
+                height:70px;
+                background: $yellow_base;
+                z-index:2;
+                
+                transform: skew(0deg,-2deg);
+                @include fix-transform-blur;
+            }*/
+        }
+
+
+        /***********************SECTION FREE CONTENT*******************************/
+        .freecontent{
+            background: $lightblue_base;
+            .container{
+                position:relative;
+                width:500px;
+                z-index:2;
+                padding:10px 0 40px 0;
+            }
+            &__title{
+                margin-top:30px;
+                margin-bottom:35px;
+
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_title_small);
+                color:$yellow_base;
+            }
+            &__text{
+                color:$white_base;
+                text-align: justify;
+                line-height:1.6;
+            }
+            @include skew-border(69px, -36px, 1.95deg, 65px, -33px, -1.95deg, $lightblue_base);
+        }
+
+
+        /***********************SECTION PLUS CONCEPT*******************************/
+        .plusconcept{
+            background: $gray_base;
+            // @include tablet-max {
+            //     min-height: 800px;
+            // }
+            .container{
+                width:500px;
+                padding:50px 15px 60px 15px;
+            }
+            &__title{
+                margin-top:20px;
+                margin-bottom:35px;
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_title_small);
+                color:$font_color_default;
+                &__icon{
+                    display: inline-block;
+                    position:relative;
+                    top:20px;
+                    height:66px;
+                    width:66px;
+                    margin:0 10px;
+
+                    background: url(../images/signe-plus.png) no-repeat;
+                    background-size:100%;
+                }
+            }
+            &__text{
+                margin-bottom:70px;
+
+                text-align: justify;
+            }
+            &__knowmore{
+                margin-bottom:25px;
+
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_title_small);
+                text-transform: uppercase;
+                color:$font_color_default;
+                @include desktop {
+                    white-space: nowrap;
+                }
+            }
+            &__link{
+                a{
+                    display: inline-block;
+                    height: 38px;
+                    padding: 8px 25px;
+                    margin: 0 auto;
+
+                    text-transform: uppercase;
+                    border-radius: 50px;
+                    text-align: center;
+                    background: $lightblue_base;
+                    color: $white_base;
+                    transition:all 0.3s;
+                    &:hover, &:focus{
+                        background-color: $blue_base;
+                    }
+                }
+            }
+        }
+
+
+        /***********************SECTION OTHER PRESTAS*******************************/
+        .otherpresta{
+            background: $yellow_base;
+            .container{
+                position:relative;
+                padding:30px 0 60px 0;
+                z-index:2;
+            }
+            &__title{
+                margin-bottom:70px;
+
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_title_small);
+                color:$form_color_hover;
+            }
+            &__contain{
+                width:$size_width_container_logo_expertise_n2;
+                margin: 0 $size_margin_container_logo_expertise_n2;
+                &__subpart{
+                    display:block;
+                    position:relative;
+                    height:253px;
+                    line-height:253px;
+                    width:253px;
+                    float:left;
+                    margin-right:60px;
+
+                    border-radius:250px;
+                    filter: blur(0);
+                    &:hover{
+                        img{
+                            transform: rotate(90deg);
+                        }
+                    }
+                    &:nth-child(3n){
+                        margin-right:0;
+                    }
+                    &:nth-child(n), &:nth-child(2n), &:nth-child(3n){
+                        margin-bottom:60px;
+                    }
+                    .description{
+                        display: inline-block;
+
+                        line-height: normal;
+                        vertical-align: middle;
+                        color:$white_base;
+                        @include font-size($font_size_logo_expert);
+                    }
+                    img{
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        max-width: 100%;
+                        transition:all 0.4s;
+                    }
+                }
+            }
+            @include skew-border(69px, -36px, -1.95deg, 0, 0, 0, $yellow_base);
+        }
+
+
+        @include tablet-max{
+            #anchor{
+                #anchor-contain{
+                    top:-25px;
+                }
+            }
+            /***********************SECTION CALLTOACTION*******************************/
+            .calltoaction{
+                .container{
+                    padding: 0px 0 20px;
+                }
+                &__text{
+                    margin-bottom: 30px;
+                }
+                &__containsBtn{
+                    a{
+                        &.works{
+                            margin-right:0;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+                &:before{
+                    top:-20px;
+                }
+                &:after{
+                    bottom:-18px;
+                }
+            }
+
+            /***********************SECTION METHOD PRESTA*******************************/
+            .methodPresta{
+                display: block;
+                .col{
+                    &.text{
+                        margin:0;
+                        width:100%;
+                        padding:50px 15px 30px 15px;
+                    }
+                    &.image{
+                        position:relative;
+                        top:0;
+                        width:100%;
+                        /*height:500px;*/
+                    }
+                }
+                &__title{
+                    margin-bottom:35px;
+                }
+            }
+
+            /***********************SECTION OTHER PRESTAS*******************************/
+            .otherpresta{
+                &__title{
+                    letter-spacing: 2px;
+                    @include font-size($font_size_title_small);
+                }
+                &__contain{
+                    width:$size_width_container_logo_expertise_n2_tablet;
+                    margin: 0 $size_margin_container_logo_expertise_n2_tablet;
+                    &__subpart{
+                        height:245px;
+                        line-height:245px;
+                        width:245px;
+                        margin-right:6px;
+                        &:nth-child(3n){
+                            margin-right:0;
+                        }
+                        &:nth-child(n), &:nth-child(2n), &:nth-child(3n){
+                            margin-bottom:30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include mobile{
+            /***********************SECTION INTRODUCTION*******************************/
+            .introPresta{
+                .container{
+                    width:100%;
+                }
+                &__title{
+                    @include font-size($font_size_h2_section);
+                }
+                &__subtitle{
+                    width: 100%;
+                    text-align: left;
+                }
+                &__description{
+                    width: 100%;
+                }
+            }
+
+            #anchor{
+                #anchor-contain{
+                    top:-40px;
+                    left:50%;
+                    height:180px;
+                    #logo{
+                        position:relative;
+                        left:-50%;
+                        height:180px;
+                        width:180px;
+                        background: url(../images/logo_action_mobile.png) no-repeat;
+                        background-size:100%;
+                    }
+                }
+            }
+            /***********************SECTION CALLTOACTION*******************************/
+            .calltoaction{
+                &__text{
+                    padding-top:160px;
+                    margin-bottom: 30px;
+                }
+                &__containsBtn{
+                    a{
+                        &.works{
+                            margin-right:15px;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            /***********************SECTION PROCESS*******************************/
+            .process{
+                &__image{
+                    margin-top:0;
+                }
+                &__text{
+                    margin-top:0;
+                }
+            }
+            
+            /***********************SECTION FREE CONTENT*******************************/
+            .freecontent{
+                .container{
+                    width:100%;
+                    padding:0 15px;
+                }
+                &__title{
+                    text-align: left;
+                }
+            }
+
+            /***********************SECTION FREE CONTENT*******************************/
+            .plusconcept{
+                text-align: left;
+                .container{
+                    width:100%;
+                }
+                &__text{
+                    margin-bottom: 30px;
+                }
+                &__knowmore{
+                    text-align: center;
+                }
+                &__link{
+                    text-align: center;
+                }
+            }
+
+            /***********************SECTION OTHER PRESTAS*******************************/
+            .otherpresta{
+                &__title{
+                    letter-spacing: 2px;
+                    @include font-size($font_size_title_small);
+                }
+                &__contain{
+                    width:$size_width_container_logo_expertise_n2_mobile;
+                    margin: 0 $size_margin_container_logo_expertise_n2_mobile;
+                    &__subpart{
+                        height:230px;
+                        line-height:230px;
+                        width:230px;
+                        margin-right:4px;
+                        &:nth-child(2n){
+                            margin-right:0;
+                        }
+                        &:nth-child(3n){
+                            margin-right:4px;
+                        }
+                        &:nth-child(n), &:nth-child(2n){
+                            margin-bottom:15px;
+                        }
+                        .description{
+                            @include font-size($font_size_logo_expert_tablet);
+                        }
+                    }
+                }
+            }
+        }
+        
+        @media (max-width: 600px) {
+            /***********************SECTION CALLTOACTION*******************************/
+            .calltoaction{
+                &__text{
+                    padding-top:140px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        
+        @media (max-width: 550px) {
+            /***********************SECTION CALLTOACTION*******************************/
+            .calltoaction{
+                &__containsBtn{
+                    text-align: center;
+                    a{
+                        margin:0;
+                        &.works{
+                            margin:0;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include small-mobile{
+            /***********************SECTION INTRODUCTION*******************************/
+            .introPresta{
+                &__title{
+                    letter-spacing: 2px;
+                    @include font-size($font_size_h2_section_mobile);
+                }
+                &__description{
+                    .short-text{
+                        display:block;
+                    }
+                    .full-text{
+                        display:none;
+                    }
+                }
+            }
+
+            /***********************SECTION CALLTOACTION*******************************/
+            .calltoaction{
+                &__text{
+                    @include font-size($font_size_pbig);
+                }
+                &__containsBtn{
+                    text-align: center;
+                    a{
+                        &.works{
+                            margin-right:0;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            /***********************SECTION PLUS CONCEPT*******************************/
+            .plusconcept{
+                &__title{
+                    &__icon{
+                        top:15px;
+                        height: 45px;
+                        width: 45px;
+                    }
+                    &__secondline{
+                        display: block;
+                        margin-top:10px;
+                    }
+                }
+            }
+
+            /***********************SECTION OTHER PRESTAS*******************************/
+            .otherpresta{
+                &__title{
+                    letter-spacing: 2px;
+                    @include font-size($font_size_title_small);
+                }
+                &__contain{
+                    width:$size_width_container_logo_expertise_n2_smobile;
+                    margin: 0 $size_margin_container_logo_expertise_n2_smobile;
+                    &__subpart{
+                        height:253px;
+                        line-height:253px;
+                        width:253px;
+                        margin:0 0 10px 0;
+                        &:nth-child(2n){
+                            margin-right:0;
+                        }
+                        &:nth-child(3n){
+                            margin-right:0;
+                        }
+                        &:nth-child(n), &:nth-child(2n){
+                            margin-bottom:10px;
+                        }
+                        &:last-child{
+                            margin-bottom:0;
+                        }
+                    }
+                }
+            }
+        }
+        
+        @media (max-width: 370px) {
+            #anchor{
+                #anchor-contain{
+                    top: -40px;
+                    left:50%;
+                    height:160px;
+                    #logo{
+                        left:-50%;
+                        height:160px;
+                        width:160px;
+                    }
+                }
+            }
+        }
+
+
+        /***************TRANSFORMATIONS********************/
+        /****Ext First section****/
+/*        .skew_make1{
+            transform: skew(0deg,-1deg);
+            @include fix-transform-blur;
+        }
+        .skew_revert1{
+            transform: skew(0deg,1deg);
+            @include fix-transform-blur;
+        }
+
+        ***Ext Second section***
+        .skew_make2{
+            transform: skew(0deg,-2deg);
+            @include fix-transform-blur;
+        }
+        .skew_revert2{
+            transform: skew(0deg,2deg);
+            @include fix-transform-blur;
+        }
+
+        ***Ext Third section***
+        .skew_make3{
+            transform: skew(0deg,2deg);
+            @include fix-transform-blur;
+        }
+        .skew_revert3{
+            transform: skew(0deg,-2deg);
+            @include fix-transform-blur;
+        }
+
+        ***Ext Fourth section***
+        .skew_make4{
+            transform: skew(0deg,-2deg);
+            @include fix-transform-blur;
+        }
+        .skew_revert4{
+            transform: skew(0deg,2deg);
+            @include fix-transform-blur;
+        }*/
+
+/*        ***Ext Fifth section***
+        .skew_make5{
+            transform: skew(0deg,-2deg);
+            @include fix-transform-blur;
+        }
+        .skew_revert5{
+            transform: skew(0deg,2deg);
+            @include fix-transform-blur;
+        }*/
+
+        /****Ext Sixth section****/
+/*        .skew_make6{
+            transform: skew(0deg,2deg);
+            @include fix-transform-blur;
+        }
+        .skew_revert6{
+            transform: skew(0deg,-2deg);
+            @include fix-transform-blur;
+        }
+
+        ***Ext Seventh section***
+        .skew_make7{
+            transform: skew(0deg,-2deg);
+            @include fix-transform-blur;
+        }
+        .skew_revert7{
+            transform: skew(0deg,2deg);
+            @include fix-transform-blur;
+        }
+
+        ***Ext Heigth section***
+        .skew_make8{
+            transform: skew(0deg,-2deg);
+            @include fix-transform-blur;
+        }
+        .skew_revert8{
+            transform: skew(0deg,2deg);
+            @include fix-transform-blur;
+        }*/
+    }
+}

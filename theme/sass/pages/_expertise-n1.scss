@@ -1,0 +1,233 @@
+body.page-template-template-expertise-niveau1,
+body.page-template-template-expertise-niveau-0{
+    background: $gray_base;
+    main {
+        @include font-size($font_size_default);
+        
+        /***********************SECTIONS*******************************/
+        section, header{
+            position:relative;
+            text-align:center;
+            box-sizing: content-box;
+        }
+
+        section > div > .wrapper, header > div > .wrapper{
+            height: 100%;
+        }
+        
+
+        /***********************SECTION INTRODUCTION*******************************/
+        .intro{
+            padding-top:40px;
+            padding-bottom:80px;
+            
+            background: $gray_base;
+            .container {
+                width:700px;
+            }
+            &__title{
+                margin-bottom:50px;
+                
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_h2_other);
+                color:$yellow_base;
+            }
+            &__subtitle{
+                margin-bottom:25px;
+                
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_title_small);
+                text-transform: uppercase;
+                color:$form_color_hover;
+            }
+            &__description{
+                text-align: left;
+                @include specific-ie{
+                    text-align: center;
+                }
+                .quote_image{
+                    @include specific-ie{
+                        display: none;
+                    }
+                    width: 64px;
+                    float: left;
+                    margin-top:-10px;
+                    margin-right: 15px;
+                }
+            }
+        }
+        
+        
+        /***********************SECTION DISCOVER*******************************/
+        .discover{
+            background: $yellow_base;
+            .container{
+                position:relative;
+                z-index:2;
+                padding:30px 0 60px 0;
+            }
+            &__title{
+                margin-bottom:70px;
+                
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_title_small);
+                color:$form_color_hover;
+            }
+            &__contain{
+                width:$size_width_container_logo_expertise_n2;
+                margin: 0 $size_margin_container_logo_expertise_n2;
+                &__subpart{
+                    display:block;
+                    position:relative;
+                    height:253px;
+                    line-height:253px;
+                    width:253px;
+                    float:left;
+                    margin-right:60px;
+                    
+                    border-radius:250px;
+                    filter: blur(0);
+                    &:hover{
+                        img{
+                            transform: rotate(90deg);
+                        }
+                    }
+                    &:nth-child(3n){
+                        margin-right:0;
+                    }
+                    &:nth-child(n), &:nth-child(2n), &:nth-child(3n){
+                        margin-bottom:60px;
+                    }
+                    .description{
+                        display: inline-block;
+                        
+                        line-height: normal;
+                        vertical-align: middle;
+                        color:$white_base;
+                        @include font-size($font_size_logo_expert);
+                    }
+                    img{
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        max-width: 100%;
+                        transition:all 0.4s;
+                    }
+                }
+            }
+            @include skew-border(69px, -36px, -1.95deg, 0, 0, 0, $yellow_base);
+        }
+        
+        @include tablet-max{
+            /***********************SECTION DISCOVER*******************************/
+            .discover{
+                &__title{
+                    letter-spacing: 2px;
+                    @include font-size($font_size_title_small);
+                }
+                &__contain{
+                    width:$size_width_container_logo_expertise_n2_tablet;
+                    margin: 0 $size_margin_container_logo_expertise_n2_tablet;
+                    &__subpart{
+                        height:245px;
+                        line-height:245px;
+                        width:245px;
+                        margin-right:6px;
+                        &:nth-child(3n){
+                            margin-right:0;
+                        }
+                        &:nth-child(n), &:nth-child(2n), &:nth-child(3n){
+                            margin-bottom:30px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        @include mobile{
+            /***********************SECTION INTRODUCTION*******************************/
+            .intro{
+                .container{
+                    width:100%;
+                }
+                &__title{
+                    @include font-size($font_size_h2_section);
+                }
+                &__subtitle{
+                    text-align: left;
+                }
+            }
+            
+            /***********************SECTION DISCOVER*******************************/
+            .discover{
+                &__title{
+                    letter-spacing: 2px;
+                    @include font-size($font_size_title_small);
+                }
+                &__contain{
+                    width:$size_width_container_logo_expertise_n2_mobile;
+                    margin: 0 $size_margin_container_logo_expertise_n2_mobile;
+                    &__subpart{
+                        height:230px;
+                        line-height:230px;
+                        width:230px;
+                        margin-right:4px;
+                        &:nth-child(2n){
+                            margin-right:0;
+                        }
+                        &:nth-child(3n){
+                            margin-right:4px;
+                        }
+                        &:nth-child(n), &:nth-child(2n){
+                            margin-bottom:15px;
+                        }
+                        .description{
+                            @include font-size($font_size_logo_expert_tablet);
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        @include small-mobile{
+            /***********************SECTION INTRODUCTION*******************************/
+            .intro{
+                &__title{
+                    letter-spacing: 2px;
+                    @include font-size($font_size_h2_section_mobile);
+                }
+            }
+            
+            /***********************SECTION DISCOVER*******************************/
+            .discover{
+                &__title{
+                    letter-spacing: 2px;
+                    @include font-size($font_size_title_small);
+                }
+                &__contain{
+                    width:$size_width_container_logo_expertise_n2_smobile;
+                    margin: 0 $size_margin_container_logo_expertise_n2_smobile;
+                    &__subpart{
+                        height:253px;
+                        line-height:253px;
+                        width:253px;
+                        margin:0 0 10px 0;
+                        &:nth-child(2n){
+                            margin-right:0;
+                        }
+                        &:nth-child(3n){
+                            margin-right:0;
+                        }
+                        &:nth-child(n), &:nth-child(2n){
+                            margin-bottom:10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

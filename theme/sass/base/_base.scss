@@ -1,0 +1,81 @@
+*{
+    padding:0;
+    margin:0;
+}
+ul, ol, li{
+    list-style:none;
+}
+
+a {
+    @extend .font-robotobold;
+    @include font-size($font_size_submenu);
+    color: $lightblue_base;
+    display: inline-block;
+    transition:color 0.2s;
+    transition:background 0.2s;
+    
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $blue_base;
+    }
+}
+
+video, img, h1,h2,h3 {
+    -webkitfilter: blur(0) !important;
+    -moz-filter: blur(0) !important;
+    filter: blur(0) !important;
+}
+
+.tablet-min{
+    display:none;
+    @include tablet-min{
+        display:block;
+    }
+}
+.mobile{
+    display:none;
+    @include tablet-max{
+        display:block;
+    }
+}
+.small-mobile{
+    display:none;
+    @include mobile{
+        display:block;
+    }
+}
+.desktop{
+    @include mobile{
+        display:none;
+    }
+}
+
+.clearfix{
+	zoom:1;
+}
+.clearfix:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+
+/***************SECTIONS POSITION****************/
+.skew_make{
+    overflow:hidden;
+    padding:40px 0 250px 0;
+    margin:0 0 -250px 0;
+}
+.skew_revert{
+    height: 100%;
+    padding:250px 0;
+    margin-top:-250px;
+}
+.skew_make:first-child{
+    margin:0;
+}
+
+.punct{
+    color:$lightblue_base;
+}

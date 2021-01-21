@@ -1,0 +1,48 @@
+body.error404 {
+    .intro{
+        padding-top:40px;
+        &__title{
+            margin-bottom:50px;
+
+            @extend .font-bitterbold;
+            letter-spacing: 2px;
+            @include font-size($font_size_h2_section);
+            color:$yellow_base;
+            text-align: center;
+        }
+    }
+    
+    .e404{
+        padding-bottom:80px;
+        p.result404__btn{
+            text-align:center;
+        }
+        a{
+            display: inline-block;
+            height: 38px;
+            width:230px;
+            padding: 8px 25px;
+            margin: 0 auto;
+            text-transform: uppercase;
+            border-radius: 50px;
+            text-align: center;
+            
+            background: $yellow_base;
+            color: $blue_base;
+            transition:all 0.3s;
+            &:hover, &:focus{
+                color:$white_base;
+            }
+        }
+    }
+    
+    @include small-mobile{
+        .intro{
+            &__title{
+                margin-bottom: 35px;
+                letter-spacing: 2px;
+                @include font-size($font_size_h2_section_mobile);
+            }
+        }
+    }
+}

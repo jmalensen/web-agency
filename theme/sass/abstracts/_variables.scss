@@ -1,0 +1,91 @@
+// == Colors
+$yellow_base            : #f6bc1a;
+$blue_base              : #464e5d;
+$lightblue_base         : #1a8a96;
+$whiteblue_base         : #7fbcc7;
+$white_base             : white;
+$red_base               : #d31145;
+$gray_base              : #efefef;
+$font_color_default     : #464e5d;
+$form_color_normal      : #4a5962;
+$form_color_hover       : #1d8a9c;
+
+
+//== Screen width
+$max-xss:  ($screen-xs - 1);
+$min-xs: $screen-xs-min;
+$max-xs: $screen-xs-max;
+$min-sm: $screen-sm-min;
+$max-sm: $screen-sm-max;
+$min-md: $screen-md-min;
+$max-md: $screen-md-max;
+$min-lg: $screen-lg-min;
+
+$nav-width: 198px;
+
+//== Font-size
+$font_size_default             :16;
+$font_size_menu                :18;
+$font_size_menu_tablet         :14;
+$font_size_menu_mobile         :11;
+$font_size_expert_mobile       :13;
+$font_size_close_btn           :60;
+$font_size_h1                  :50;
+$font_size_h2                  :40;
+$font_size_h2_signatures       :70;
+$font_size_h2_signatures_tablet:55;
+$font_size_h2_signatures_mobile:40;
+$font_size_h2_signatures_smobile:31;
+$font_size_h2_other             :60;
+$font_size_h2_section          :($font_size_h2_signatures)-20;
+$font_size_h2_section_tablet   :($font_size_h2_signatures_tablet)-15;
+$font_size_h2_section_mobile   :34;
+$font_size_h2_section_smobile  :($font_size_h2_signatures_smobile)-10;
+$font_size_h3_works_mobile     :30;
+$font_size_h3_works_smobile    :26;
+$font_size_submenu             :16;
+$font_size_submenu_tablet      :14;
+$font_size_p                   :20;
+$font_size_p_tablet            :16;
+$font_size_p_mobile            :18;
+$font_size_pbig                :24;
+$font_size_pbig_tablet         :16;
+$font_size_pbig_mobile         :18;
+$font_size_p_works_mobile      :12;
+$font_size_p_works_smobile     :9;
+$font_size_footer_title        :30;
+$font_size_footer_title_tablet :20;
+$font_size_link_footer_tablet  :12;
+$font_size_title_small         :26;
+$font_size_title_big           :30;
+$font_size_logo_expert         :22;
+$font_size_logo_expert_tablet  :18;
+
+//== Font-family
+/*$font_bitter:'Bitter-Bold';
+$font_roboto_light:'Roboto-light';
+$font_roboto_regular:'Roboto-regular';
+$font_roboto_bold:'Roboto-bold';*/
+
+//== Margin container calc
+$size_width_aside_large:calc( 970px * 0.38 );
+$size_width_main_large:calc( (970px * 0.56) + ( (100vw - 970px)/2 ) );
+$size_margin_container_large: calc( (100vw - 970px)/2 );
+
+//== Width calc
+$size_width_logos_customer:640px;
+$size_width_text_customer: calc( 100% - #{$size_width_logos_customer} );
+$size_width_logos_customer_tablet:440px;
+$size_width_text_customer_tablet: calc( 100% - #{$size_width_logos_customer_tablet} );
+
+$size_width_container_logo_tablet:444px;
+$size_margin_container_logo_tablet:calc( (100% - #{$size_width_container_logo_tablet}) / 2 );
+
+$size_width_container_logo_expertise_n2:885px;
+$size_margin_container_logo_expertise_n2:calc( (100% - #{$size_width_container_logo_expertise_n2}) / 2 );
+$size_width_container_logo_expertise_n2_tablet:750px;
+$size_margin_container_logo_expertise_n2_tablet:calc( (100% - #{$size_width_container_logo_expertise_n2_tablet}) / 2 );
+$size_width_container_logo_expertise_n2_mobile:468px;
+$size_margin_container_logo_expertise_n2_mobile:calc( (100% - #{$size_width_container_logo_expertise_n2_mobile}) / 2 );
+$size_width_container_logo_expertise_n2_smobile:253px;
+$size_margin_container_logo_expertise_n2_smobile:calc( (100% - #{$size_width_container_logo_expertise_n2_smobile}) / 2 );

@@ -1,0 +1,344 @@
+.border {
+    border: 1px solid red;
+}
+
+.page-agence {
+    /***********************SECTION INTRODUCTION*******************************/
+    .introduction {
+        padding: 40px 0 130px 0;
+        &__container {
+            position: relative;
+            z-index: 1;
+            
+            animation-name: ciFadeInLeft;
+            animation-fill-mode: both;
+            animation-duration: 1.1s;
+            animation-delay: 0.1s;
+            &__title {
+                @extend .font-bitterbold;
+                letter-spacing: 4px;
+                @include font-size($font_size_h2_other);
+                line-height: 70px;
+                color: $yellow_base;
+                display: block;
+            }
+            &__description {
+                margin: 40px 0 0 0;
+                
+                @include font-size($font_size_default);
+                .quote_image{
+                    width: 64px;
+                    float: left;
+                    margin-top:-10px;
+                    margin-right: 15px;
+                }
+            }
+        }
+        &__background-img {
+            position: absolute;
+            // float: left;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            // height: 100%;
+            //max-width:100%;
+        }
+/*        &__background-img-mobile {
+            display: none;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+        }*/
+    }
+
+
+    /***********************SECTION COMPETENCES*******************************/
+    .competences {
+        position: relative;
+        overflow: hidden;
+        height: 570px;
+        
+        background: $blue_base;
+        transform: skewY(-2.35deg);
+        @include fix-transform-blur;
+        filter:blur(0);
+        &__background-img {
+            position: absolute;
+            min-height: 100%;
+            width: auto;
+            margin-top: -20px;
+        }
+        &__background-img-mobile {
+            display: none;
+            position: absolute;
+            min-height: 100%;
+            width: auto;
+            margin-top: -20px;
+        }
+        &__container {
+            position: absolute;
+            right: 9%;
+            top: 50%;
+            width: 28%;
+            
+            transform: skewY(2.35deg) translateY(-60%);
+            @media (max-width: 800px) {
+                width: 100%;
+                right: 0;
+                padding: 0 25px;
+            }
+            @media (min-width: 800px) and (max-width: 1300px) {
+                width: 50%;
+            }
+            &__title {
+                margin-bottom: 30px;
+                
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_title_small);
+                color: $yellow_base;
+            }
+            &__subtitle {
+                color: $white_base;
+                @include font-size($font_size_title_big);
+                font-style: italic;
+                @extend .font-robotolight;
+            }
+            p {
+                color: $white_base;
+                @include font-size($font_size_default);
+                margin-top: 12px;
+            }
+        }
+    }
+
+    
+    /***********************SECTION ADN*******************************/
+    .adn {
+        // min-height: 40vw;
+        margin-top: -90px;
+        overflow: hidden;
+        
+        background: $gray_base;
+        transform: skewY(1.55deg);
+        @include fix-transform-blur;
+        // display: table;
+        .no-skew {
+            // height: 900px;
+            transform: skewY(-1.55deg);
+            // display: flex;
+            .adn__part-1 {
+                display: inline-block;
+                width: 55%;
+                &__content {
+                    max-width: 575px;
+                    float: right;
+                    padding: 30px 0 130px 40px;
+                    margin-right: 40px;
+                    &:after {
+                        clear: both;
+                    }
+                    .title {
+                        @extend .font-bitterbold;
+                        letter-spacing: 2px;
+                        @include font-size($font_size_title_small);
+                        line-height: 70px;
+                        color: $lightblue_base;
+                    }
+                    .subtitle {
+                        @include font-size($font_size_title_big);
+                        @extend .font-robotolight;
+                        font-style: italic;
+                    }
+                    p {
+                        margin-top: 30px;
+                        
+                        @include font-size($font_size_default);
+                    }
+                    ul {
+                        position: relative;
+                        margin-top: 35px;
+                        li {
+                            margin-top: 15px;
+                            padding-left: 33px;
+                            padding-top: -50px;
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                margin-top: 5px;
+                                width: 13px;
+                                height: 13px;
+                                background-color: $lightblue_base;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                    .catchphrase {
+                        display: block;
+                        margin-top: 50px;
+                        
+                        @extend .font-bitterbold;
+                        @include font-size($font_size_title_small);
+                        text-align: center;
+                        text-transform: uppercase;
+                    }
+                    .btn-contact {
+                        padding:5px 25px;
+                        margin-top: 20px;
+                        margin-left: 50%;
+                        
+                        background: $lightblue_base;
+                        @extend .font-robotobold;
+                        @include font-size($font_size_submenu);
+                        text-transform: uppercase;
+                        color: $white_base;
+                        border-radius:25px;
+                        text-decoration:none;
+                        transform: translateX(-50%);
+                        white-space: nowrap;
+                        
+                        transition:all 0.3s;
+                        &:hover{
+                            background: $blue_base;
+                        }
+                    }
+                }
+                
+                @include tablet-max {
+                    width: 100%;
+                    .adn__part-1__content {
+                        float: inline-end;
+                        min-width: 100%;
+                        margin-right: 0;
+                        margin-left: 50%;
+/*                        transform: translateX(-50%);*/
+                        padding: 30px;
+                    }
+                }
+            }
+            .adn__part-2 {
+                display: inline-block;
+                width: 45%;
+                position: absolute;
+                height: 105%;
+                overflow: hidden;
+                &__img {
+                    min-width: 100%;
+                    min-height: 100%;
+                }
+            }
+        }
+    }
+    
+    @include tablet-max{
+        .introduction{
+            padding-bottom: 20px;
+            &__container {
+                &__title {
+                    letter-spacing: 4px;
+                    @include font-size($font_size_h2_signatures_tablet);
+                    line-height: #{($font_size_h2_signatures_tablet)-10}px;
+                }
+            }
+        }
+        
+/*        **********************SECTION ADN******************************
+        .adn{
+            .no-skew {
+                .adn__part-1{
+                    display: block;
+                    width:100%;
+                    &__content {
+                        .catchphrase {
+                        }
+                    }
+                }
+                .adn__part-2{
+                    display: block;
+                    width: 100%;
+                    position: relative;
+                    max-height: 700px;
+                    bottom: -5px;
+
+                    transform: skewY(1.55deg);
+                    &__img{
+                        transform: skewY(-1.55deg);
+                        width:100%;
+                    }
+                }
+            }
+        }*/
+        
+        /**********************SECTION ADN******************************/
+        .adn{
+            .no-skew {
+                .adn__part-2{
+                    width: 100%;
+                    position: relative;
+                    max-height: 700px;
+                    bottom: -5px;
+
+                    transform: skewY(1.55deg);
+                    &__img{
+                        transform: skewY(-1.55deg);
+                        width:100%;
+                    }
+                }
+            }
+        }
+    }
+    
+    @include mobile {
+        .introduction{
+            &__container {
+                &__title {
+                    letter-spacing: 1px;
+                    @include font-size($font_size_h2_signatures_mobile);
+                    line-height: 45px;
+                }
+            }
+        }
+        
+        /***********************SECTION COMPETENCES*******************************/
+        .competences__background-img {
+            margin-left: -50%;
+        }
+        
+        /***********************SECTION ADN*******************************/
+        .adn{
+            .no-skew {
+                display: block;
+                .adn__part-1{
+                    &__content {
+                        .catchphrase {
+                            display:none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @include small-mobile{
+        .introduction{
+            padding-top: 40px;
+/*            &__background-img {
+                display:none;
+            }
+            &__background-img-mobile {
+                display: block;
+            }*/
+        }
+        
+        .competences{
+/*            &__background-img {
+                display:none;
+            }
+            &__background-img-mobile {
+                display: block;
+            }*/
+        }
+    }
+}

@@ -1,0 +1,33 @@
+html, body {
+	@include font-size($font_size_default);
+    @extend .font-robotoregular;
+}
+
+main{
+    color:$font_color_default;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+
+    text-transform: uppercase;
+}
+
+h1 {
+	font-size: 18px;
+	text-transform: uppercase;
+	@include desktop {
+        @include font-size(36);
+	}
+}
+
+h2:not(.home) {
+}
+
+h3:not(.home) {
+}
+
+.ucase {
+	text-transform: uppercase;
+}

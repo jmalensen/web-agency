@@ -1,0 +1,23 @@
+.button_wrapper {
+	text-align: center;
+	@include desktop {
+		text-align: left;
+	}
+}
+.button {
+	@include desktop {
+		width: auto;
+	}
+	&:after {
+		
+	}
+	&:hover {
+		
+	}
+}
+
+header {
+	button {
+		
+	}
+}

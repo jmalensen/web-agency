@@ -1,0 +1,10 @@
+div#cookie-notice {
+    display: block;
+    .cn-set-cookie {
+        background-color: $yellow_base;
+        border-radius: 9px;
+        color: $blue_base;
+        font-weight: 400;
+        padding: 2px 7px 1px;
+    }
+}

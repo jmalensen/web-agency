@@ -1,0 +1,369 @@
+/*********************FOOTER**********************/
+.footer-anchor{
+    position:relative;
+    .simulate-footer {
+        min-height: 65px;
+        position:absolute;
+        width:100%;
+        top:-32px;
+        z-index: 4;
+        // bottom:-48px;
+        //
+        transform: skewY(1.95deg);
+        background: $blue_base;
+    }
+}
+footer.main{
+    height:auto;
+    overflow:hidden;
+    padding-bottom: 75px;
+    position:relative;
+    z-index:20;
+
+    @include font-size($font_size_default);
+    background: $blue_base;
+    filter:blur(0);
+    section{
+        height: 110px;
+        position:relative;
+        text-align:left;
+        box-sizing: content-box;
+    }
+
+    section > div > .wrapper{
+        /*width:70%;*/
+        margin:0 auto;
+        padding:0;
+        height: 100%;
+    }
+
+    .mainfooter{
+        background: $blue_base;
+        ul{
+            overflow:auto;
+        }
+        &__text{
+            display:block;
+            width:25%;
+            float:left;
+            padding:0 17px;
+
+            color:$white_base;
+            &:first-child{
+                padding-left:0;
+            }
+            &:last-child{
+                padding-right:0;
+                padding-left:80px;
+            }
+            &__title{
+                margin:0 0 25px 0;
+
+                @extend .font-bitterbold;
+                text-transform: uppercase;
+                @include font-size($font_size_footer_title);
+                color:$yellow_base;
+            }
+        }
+        .newsletter{
+            &__text{
+                margin-bottom: 20px;
+
+                text-align: left;
+            }
+            &__form{
+                position:relative;
+                top:-15px;
+                text-align:center;
+                input{
+                    width:100%;
+                    margin-bottom: 30px;
+                    padding-bottom: 8px;
+
+                    background: none;
+                    border-bottom:2px solid $white_base;
+                    text-align: center;
+                    color:$white_base;
+                    @include placecolor($white_base);
+                }
+/*                a{
+                    display: inline-block;
+                    height: 38px;
+                    padding: 8px 25px;
+                    margin: 0 auto;
+
+                    background: $lightblue_base;
+                    color: $white_base;
+                    text-transform: uppercase;
+                    border-radius: 50px;
+                    transition:all 0.3s;
+                    &:hover, &:focus{
+                        background: $white_base;
+                        color: $lightblue_base;
+                    }
+                }*/
+            }
+        }
+
+        .social-network{
+            margin-top: 10px;
+            ul{
+                overflow:hidden;
+                li{
+                    float:left;
+                    width:33%;
+                    padding:0 5px;
+                    margin-bottom:20px;
+                    &:nth-child(4), &:nth-child(5), &:nth-child(6){
+                        margin-bottom:0;
+                    }
+                    a{
+                        display:block;
+                        width:49px;
+                        height:49px;
+
+                        text-indent:-9999pt;
+                        &.facebook{
+                            background: url(../images/logo-facebook.png) no-repeat;
+                            background-size: 100%;
+                        }
+                        &.twitter{
+                            background: url(../images/logo-twitter.png) no-repeat;
+                            background-size: 100%;
+                        }
+                        &.linkedin{
+                            background: url(../images/logo-linkedin.png) no-repeat;
+                            background-size: 100%;
+                        }
+                        &.vimeo{
+                            background: url(../images/logo-vimeo.png) no-repeat;
+                            background-size: 100%;
+                        }
+                        &.instagram{
+                            background: url(../images/logo-instagram.png) no-repeat;
+                            background-size: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .blog{
+            margin-top: 20px;
+            &__text{
+                text-align: left;
+            }
+            &__link{
+                text-align:center;
+                a{
+                    display: inline-block;
+                    height: 38px;
+                    padding: 8px 25px;
+                    margin: 0 auto;
+
+                    background: $lightblue_base;
+                    color: $white_base;
+                    text-transform: uppercase;
+                    border-radius: 50px;
+                    transition:all 0.3s;
+                    &:hover, &:focus{
+                        background: $white_base;
+                        color: $lightblue_base;
+                    }
+                }
+            }
+        }
+
+        .links{
+            margin-top: 30px;
+            li{
+                line-height:2;
+            }
+            a{
+                @extend .font-robotolight;
+                color:$yellow_base;
+                transition:all 0.2s;
+                &:hover, &:focus{
+                    color: $white_base;
+                }
+            }
+            .posts-counter-data {
+              background-color: $lightblue_base;
+              border-radius: 12px;
+              display: inline-block;
+
+              height: 24px;
+              width: 24px;
+              margin-left: 1px;
+
+              line-height: 24px;
+              text-align: center;
+            }
+        }
+    }
+
+    /****Ext seventh section****/
+    .skew_make7{
+        transform: skew(0deg,2deg);
+        @include fix-transform-blur;
+    }
+    .skew_revert7{
+        transform: skew(0deg,-2deg);
+        @include fix-transform-blur;
+    }
+
+    @include tablet-max{
+        .mainfooter{
+            &__text{
+                &:last-child{
+                    padding-left:40px;
+                }
+                &__title{
+                    @include font-size($font_size_footer_title_tablet);
+                }
+            }
+
+            .newsletter{
+                &__form{
+                    top:-25px;
+                    a{
+                        /*height:33px;*/
+                        @include font-size($font_size_link_footer_tablet);
+                    }
+                }
+            }
+
+            .social-network{
+                ul{
+                    li{
+                        padding:0 5px;
+                        margin-bottom:15px;
+                        a{
+                            width:40px;
+                            height:40px;
+                        }
+                    }
+                }
+            }
+
+            .blog{
+                &__link{
+                    a{
+                        height:33px;
+                        @include font-size($font_size_link_footer_tablet);
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        section{
+            height: 220px;
+        }
+        .mainfooter{
+            &__text{
+                width:100%;
+                float:none;
+                padding:0 15px 0 15px;
+                &:first-child{
+                    padding-left:15px;
+                }
+                &:last-child{
+                    padding-left:15px;
+                    padding-right:0;
+                }
+                &__title{
+                    @include font-size($font_size_footer_title);
+                }
+            }
+            .newsletter{
+                margin-bottom: 80px;
+                &__title{
+                    margin-bottom: 5px;
+                }
+                &__form{
+                    input{
+                        text-align: left;
+                    }
+                    &__link{
+                        a{
+                            height:38px;
+                            @include font-size($font_size_default);
+                        }
+                    }
+                }
+            }
+            .social-network{
+                text-align: center;
+                ul{
+                    margin-bottom:30px;
+                    text-align: center;
+                    display: inline-block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    li{
+                        // float:left;
+                        // width:16.6666%;
+                        width: auto;
+                        display: inline-block;
+                        padding:0 5px;
+                        margin-bottom:0;
+                        a{
+                            width:49px;
+                            height:49px;
+                        }
+                    }
+                }
+            }
+            .blog{
+                margin-top: 0;
+                margin-bottom: 30px;
+                &__link{
+                    a{
+                        height:38px;
+                        @include font-size($font_size_default);
+                    }
+                }
+            }
+            .links{
+                padding-left: 5px;
+                padding-right: 5px;
+                text-align: center;
+                ul{
+                    display: inline-block;
+                    overflow: auto;
+                    li{
+                        display: inline-block;
+                        margin: 0 10px;
+                        // float:left;
+                        // width:33%;
+                    }
+                }
+                a{
+                    color:$white_base;
+                }
+            }
+        }
+    }
+
+    @include small-mobile{
+        .mainfooter{
+            .social-network{
+                ul{
+                    li{
+                        a{
+                            width:39px;
+                            height:39px;
+                        }
+                    }
+                }
+            }
+            .links{
+                a{
+                    @include font-size($font_size_menu_tablet);
+                }
+            }
+        }
+    }
+}

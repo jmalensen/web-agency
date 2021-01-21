@@ -1,0 +1,225 @@
+.simulate-header{
+    min-height: 30px;
+    position:absolute;
+    width:100%;
+    top:-20px;
+    transform: skewY(0.75deg);
+    background: $lightblue_base;
+}
+header.main{
+    @include font-size($font_size_default);
+    /***************MAIN MENU********************/
+    nav{
+        position: relative;
+        margin-top:20px;
+        z-index: 99;
+    }
+    #main-menu{
+        box-sizing: border-box;
+        li{
+            display:inline-block;
+            width:19%;
+
+            font-weight:normal;
+            @extend .font-bitterbold;
+            letter-spacing: 1px;
+            text-align: center;
+            a{
+                @extend .font-bitterbold;
+                @include font-size($font_size_menu);
+                text-transform: uppercase;
+                color:$font_color_default;
+                transition:all 0.1s;
+                &:hover, &:focus{
+                    padding-bottom:5px;
+                
+                    border-bottom:2px solid $yellow_base;
+                }
+            }
+            &.menu-left{
+                text-align:left;
+            }
+            &.menu-right{
+                text-align:right;
+            }
+            &.current-menu-item a, &.current-page-ancestor a{
+                padding-bottom:5px;
+                
+                border-bottom:2px solid $yellow_base;
+            }
+            &.homelink{
+                position:relative;
+                top:-8px;
+                a{
+                    display:block;
+                    width:100%;//190px;
+                    height:50px;
+                    padding-bottom:0;
+
+                    border-bottom:none;
+                    text-indent: -9999pt;
+                    background: url(../images/logo_ci.svg) -20% center no-repeat;
+                    background-size: 100%;
+                }
+            }
+        }
+    }
+
+    #popup-expertise{
+        position:fixed;
+        z-index:1000;
+        top:0;
+        width:100%;
+        left:0;
+        height:100vh;
+        padding:50px 100px;
+        display:none;
+
+        text-align: center;
+        background:rgba($lightblue_base,0.9);// url(../images/logo_ci_menu.png) 50% 90% no-repeat;
+        .closeMenu{
+            position:absolute;
+            top:20px;
+            right:40px;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            padding:5px;
+            overflow: hidden;
+            &:hover {
+                opacity:0.6;
+            }
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                height: 3px;
+                width: 75%;
+                top: 50%;
+                left: 5px;
+
+                background: $yellow_base;
+            }
+            &:before {
+                transform: rotate(45deg);
+            }
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        h2{
+            padding-bottom: 20px;
+            margin-bottom: 60px;
+
+            @extend .font-bitterbold;
+            letter-spacing: 2px;
+            @include font-size($font_size_h2_section);
+            color:$yellow_base;
+            border-bottom: 1px solid $white_base;
+        }
+        ul li{
+            margin-bottom: 12px;
+            a{
+                color:$white_base;
+                @include font-size($font_size_pbig);
+                @extend .font-robotolight;
+                text-decoration:none;
+                transition:all 0.2s;
+                &:hover, &:focus{
+                    color:$yellow_base;
+                }
+            }
+        }
+        .decoration{
+            margin-top: 30px;
+            
+            text-align: center;
+            img{
+                width:105px;
+                height:105px;
+            }
+        }
+    }
+    
+    @include tablet-max{
+        #main-menu{
+            li{
+                a{
+                    @include font-size($font_size_menu_tablet);
+                }
+            }
+        }
+    }
+    
+    @include mobile{
+        .nav-main-menu{
+            margin:0;
+        }
+        #main-menu{
+            position:fixed;
+            width:100vw;
+            left:0;
+            bottom:0;
+            padding:20px 0;
+            margin:0;
+            z-index:1000;
+            
+            background: $lightblue_base;
+            box-shadow: 0 0 10px 3px #000000;
+            li{
+                width:24%;
+                a{
+                    color:$white_base;
+                    &:hover{
+                        padding-bottom:0;
+                        border-bottom:none;
+                    }
+                }
+                &.menu-left{
+                    text-align:center;
+                }
+                &.menu-right{
+                    text-align:center;
+                }
+                &.homelink{
+                    display: none;
+                }
+            }
+        }
+        
+        .logo-mobile{
+            margin-top:15px;
+            
+            text-align: center;
+            img{
+                height:48px;
+                width:191px;
+            }
+        }
+        
+        #popup-expertise{
+            height:90%;
+            padding: 120px 100px;
+            
+            background:rgba($lightblue_base,1);
+            ul li a{
+                @include font-size($font_size_default);
+            }
+        }
+    }
+    
+    @include small-mobile{
+        #main-menu{
+            li{
+                a{
+                    @include font-size($font_size_menu_mobile);
+                }
+            }
+        }
+        
+        #popup-expertise{
+            padding: 120px 60px;
+        }
+    }
+}

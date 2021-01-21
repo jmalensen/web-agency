@@ -1,0 +1,83 @@
+/*@keyframes ciFadeInRight {
+    0% {
+        position:relative;
+        left:30%;
+        transform: translate3d(30%, 0, 0);
+        visibility: visible;
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+        left:0%;
+    }
+}
+
+@keyframes ciFadeInLeft {
+    0% {
+        position:relative;
+        left:-20%;
+        transform: translate3d(-20%, 0, 0);
+        transform: matrix(1, 0, 0, 1, -50, 0);
+        visibility: visible;
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        left:0%;
+        transform: translate3d(0, 0, 0);
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+}
+
+@keyframes ciFadeIn {
+    0% {
+        visibility: visible;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes ciFadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 25%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.animated {
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    &.ciFadeInLeft {
+        animation-name: ciFadeInLeft;
+    }
+
+    &.ciFadeInRight {
+        animation-name: ciFadeInRight;
+    }
+
+    &.ciFadeIn {
+        animation-name: ciFadeIn;
+    }
+
+    &.ciFadeInUp {
+        animation-name: ciFadeInUp;
+    }
+}
+*/

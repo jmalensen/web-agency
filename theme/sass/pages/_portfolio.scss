@@ -1,0 +1,331 @@
+body.page-template-template-portfolio{
+    background: $gray_base;
+    main {
+        /***********************SECTIONS*******************************/
+        section{
+            position:relative;
+            box-sizing: content-box;
+            overflow:hidden;
+            padding:40px 0 250px 0;
+        }
+
+        section > div > .wrapper{
+            height: 100%;
+        }
+
+        /***********************SECTION PORTFOLIO*******************************/
+        .portfolio{
+            &__title{
+                margin-bottom:0;
+                padding:0 15px;
+                display:block;
+
+                @extend .font-robotoregular;
+                letter-spacing: 1px;
+                @include font-size($font_size_title_small);
+                color:$form_color_hover;
+                text-transform: none;
+            }
+            &__subtitle{
+                margin-bottom:50px;
+                padding:0 15px;
+                display:block;
+
+                @extend .font-bitterbold;
+                letter-spacing: 2px;
+                @include font-size($font_size_h2_other);
+                color:$yellow_base;
+            }
+
+            #choice-presta{
+                margin-bottom:20px;
+                width:100%;
+
+                // text-align:justify;
+                text-align: center;
+                li{
+                    display:inline-block;
+                    position: relative;
+                    margin-bottom:20px;
+                    a{
+                        padding:5px 10px;
+                        margin:0 0 0 26px;
+
+                        @extend .font-robotoregular;
+                        @include font-size($font_size_submenu);
+                        text-decoration:none;
+                        color:$font_color_default;
+                        text-transform:lowercase;
+                        text-align:center;
+                        &:hover, &.activePresta{
+                            padding:3px 8px;
+
+                            border-radius:25px;
+                            border:2px solid $form_color_hover;
+                            color:$form_color_hover;
+                        }
+                    }
+
+                    &:first-child {
+                        a{
+                            margin:0;
+                        }
+                    }
+                    //************Line decoration before first menu item***************/
+                    &:first-child:before {
+                        position: absolute;
+                        content: '';
+                        top: 0%;
+                        left:-70px;
+                        width:70px;
+                        height: 50%;
+
+                        border-bottom: 2px solid $form_color_hover;
+                    }
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        top: 0%;
+                        width:26px;
+                        height: 50%;
+
+                        border-bottom: 2px solid $form_color_hover;
+                    }
+                    &:not(:last-child) {
+                        /*margin-right: 25px;*/
+                    }
+                    //************Line decoration after menu item***************/
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        top: 0%;
+                        width:26px;
+                        height: 50%;
+
+                        border-bottom: 2px solid $form_color_hover;
+                    }
+                    &:last-child:after {
+                        padding:0 35px;
+                    }
+                }
+            }
+
+            .containWork{
+                /*overflow:auto;*/
+            }
+            &__onework{
+                display: inline-block;
+                position:absolute;
+                height:380px;
+                width:300px;
+                &:last-child{
+                    margin-right:0;
+                }
+                &__visual, &__visual-video{
+                    position:relative;
+                    margin-bottom: 10px;
+                    width:300px;
+                    height:260px;
+
+                    transition:all 0.3s;
+                    &:after{
+                        position:absolute;
+                        content:'';
+                        top:0;
+                        left:0;
+                        width:300px;
+                        height:260px;
+                        z-index:10;
+                        opacity:0;
+                        background: rgba($lightblue_base,.7);
+                        transition:opacity 0.3s;
+                    }
+                }
+                &__visual-video{
+                    overflow:hidden;
+                }
+                &__titles{
+                    position:relative;
+                    z-index: 10;
+                    padding-right:16px;
+                    transition:all 0.3s;
+                    transition-timing-function: ease-in-out;
+                    @include font-size($font_size_p);
+                    .title{
+                        @include font-size($font_size_p);
+                        @extend .font-bitterbold;
+                        letter-spacing: 1px;
+                    }
+                    .subtitle{
+                        @extend .font-robotoregular;
+                        color:$font_color_default;
+                    }
+                    &--overstate{
+                        top:30%;
+                        left:10%;
+                    }
+                }
+                .innerLink{
+                    video{
+/*                        min-width: 100%;
+                        min-height: 100%;*/
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        width: auto;
+                        height: auto;
+                        max-height: 100%;
+                        transform: translate(-50%,-50%);
+                        z-index:-1;
+                    }
+                    &:hover, &:focus{
+                        .portfolio__onework__visual{
+                            transform: matrix(1, 0, 0, 1, 0, 20);
+                            &:after{
+                                opacity:1;
+                            }
+                        }
+                        .portfolio__onework__visual-video{
+                            transform: matrix(1, 0, 0, 1, 0, 20);
+                            &:after{
+                                opacity:1;
+                            }
+                        }
+                        .portfolio__onework__titles{
+                            transform: matrix(1, 0, 0, 1, 12, -180);
+                            .title{
+                                color:$yellow_base;
+                            }
+                            .subtitle{
+                                color:$white_base;
+                            }
+                        }
+                    }
+                }
+            }
+            #loader{
+                display: none;
+                position: relative;
+                top:20px;
+                left: 50%;
+                height:40px;
+                width:40px;
+                background-size:100%;
+            }
+        }
+
+        @include tablet-max{
+            /***********************SECTION PORTFOLIO*******************************/
+            .portfolio{
+                //*******************Submenu for choice presta*****************/
+                #choice-presta{
+                    li{
+                        a{
+                            padding: 5px 9px;
+                            margin:0 0 0 21px;
+
+                            @include font-size($font_size_submenu_tablet);
+                            &:hover, &.activePresta{
+                                padding: 3px 7px;
+                            }
+                        }
+
+                        &:first-child {
+                            a{
+                                margin:0;
+                            }
+                        }
+                        //************Line decoration before first menu item***************/
+                        &:first-child:before {
+                            width:56px;
+                            left:-56px;
+                        }
+                        &:before {
+                            width:21px;
+                        }
+                        &:not(:last-child) {
+                            /*margin-right: 20px;*/
+                        }
+                        //************Line decoration after menu item***************/
+                        &:after {
+                            width:21px;
+                        }
+                        &:last-child:after {
+                            padding:0 25px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include mobile{
+            /***********************SECTION PORTFOLIO*******************************/
+            .portfolio{
+                //*******************Submenu for choice presta*****************/
+                #choice-presta{
+                    margin-bottom:30px;
+
+                    text-align: left;
+                    li{
+                        a{
+                            margin-left:0px;
+                            margin-right:10px;
+                            border-radius: 25px;
+                            border:2px solid $font_color_default;
+                            @include font-size($font_size_submenu);
+                            &:hover, &.activePresta{
+                                padding:5px 9px;
+                                border-color:$form_color_hover;
+                            }
+                        }
+                        &:first-child{
+                            a{
+                                margin-right:10px;
+                            }
+                        }
+                        &:before{
+                            content:none;
+                        }
+                        &:first-child {
+                            margin-left: 0px;
+                        }
+                        //************Line decoration before first menu item***************/
+                        &:first-child:before {
+                            content: none;
+                        }
+                        //************Line decoration after menu item***************/
+                        &:after {
+                            content: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include small-mobile{
+            /***********************SECTION PORTFOLIO*******************************/
+            .portfolio{
+                &__subtitle{
+                    letter-spacing: 2px;
+                    @include font-size($font_size_h2_section_mobile);
+                }
+                //*******************Submenu for choice presta*****************/
+                #choice-presta{
+                    padding:0 0 5px 15px;
+                    li{
+                        a{
+                            /*height:40px;*/
+                            @include font-size($font_size_expert_mobile);
+                            &:hover, &.activePresta{
+                                border-radius: 30px;
+                            }
+                        }
+                    }
+                }
+                .contain-infos{
+                    padding:0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+<?php
+/*
+* Theme Name: @@prettyThemeName
+* Author: @@themeAuthor
+* Version: @@themeVersion
+* Text Domain: @@themeName
+* Description: Home template
+*			   @@themeDescription
+*/
+
+get_header(); ?>
+
+<?php //------------MAIN CONTENT-----------------------?>
+<main>
+	<div class="main-page-title <?php if(have_posts()) echo 'even-row'; ?>">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 main-title__wrapper main-title__translation main-title__translation-no-xs glow">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<?php if (have_posts()) : ?>
+		<?php while (have_posts()) : the_post(); ?>
+			<?php get_template_part('partials/list', 'loop'); ?>
+		<?php endwhile; ?>
+
+		<?php if(function_exists('wp_pagenavi')) : ?>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<?php wp_pagenavi(); ?>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+
+	<?php else : ?>
+		<article class="list-item container">
+			<div class="row">
+				<div class="col-xs-12">
+					<?php _e('No content find', '@@themeName'); ?>
+				</div>
+			</div>
+		</article>
+	<?php endif; ?>
+</main>
+<?php //------------END MAIN CONTENT-------------------?>
+
+<?php get_footer(); ?>
